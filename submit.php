@@ -88,6 +88,7 @@
 		3. The maximum length of url is 200 characters<br>
 		4. Redundant URL are not allowed<br>
 		5. If you input any space in Topic name it will be converted to underscore<br>
+		<div style="padding-top: 3vmax;"></div>
 		</div>
 	</div>
 </div>
