@@ -62,11 +62,11 @@
 	$website='';
 	$cnt=0;$i=0;
 	$flag=0;
+	$len=0;
 	$len=strlen($url2);
 	for($i=1;$i<$len;$i++)
 		if($url2[$i]=='/'&&$url2[$i-1]=='/')
 			$flag=1;
-	$url='';
 	if($flag==0)
 		$url='//'.$url2;
 	else
@@ -101,17 +101,35 @@
 		$qu=mysqli_query($dbc,"INSERT INTO $Topic VALUES ($uid2[0],'$title','$desc','$website','$url')") or die(mysqli_error($dbc));
 	 	if($qu)
 	 	{
-	 		echo "Succesful upload click<a href='/index.html'> here</a> to go to main site";
-	 		echo '<br/>';
-	 		echo 'Topic Name: '.$Topic;
-	 		echo '<br/>';
-	 		echo 'Title of Tutorial: '.$title;
-	 		echo '<br/>';
-	 		echo 'Description: '.$desc;
-	 		echo '<br/>';
-	 		echo 'Website Name: '.$website;
-	 		echo '<br/>';
-	 		echo 'Url: <a href='.$url.'>'.$url;
+	 		echo "Succesful upload click<a href='/index.html'> here</a> to go to main site. Your upload looks like this :)";
+	 		echo'<div style="padding-top:3vmax;"></div>';
+			echo '<div class="damn">';
+			echo '<div class="row">';
+			echo '<a href="'.$url.'">';
+				echo '<div class="col-xs-10 col-xs-offset-1 langr1 tutalphabets">';
+				echo '<img src="alphabets/'.strtolower($title[0]).'.png" class=" col-xs-4 col-md-2 col-md-offset-5 col-xs-offset-4">';
+				echo '</div>';
+				echo '<div class="col-xs-5 col-xs-offset-1 langr1">';
+					echo $title;
+				echo '</div>';
+			echo '</a>';
+			echo '<a href=//'.$website.'>';
+				echo '<div class="col-xs-5 langr1">';
+					echo $website;
+				echo '</div>';
+				echo '<div class=col-xs-1></div>';
+			echo '</a>';
+			echo '</div>';
+			echo '<div class="row">';
+			echo '<a href="'.$url.'">';
+				echo '<div class="col-xs-10 col-xs-offset-1 langr1">';
+					echo $desc;
+				echo '</div>';
+			echo '</a>';
+			echo '</div>';
+			echo '</div>';
+
+		
 	 	}
 	 }	
 	 mysqli_close($dbc);
