@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+	<title>Intern Hackr</title>
+</head>
+<!-- PHP functions definations -->
+
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-fixed-top navbar-inverse">
+<div  class="navbar-header">
+<a class="navbar-brand" href="index.html">Hackr</a>
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+</button>
+</div>
+<div id="menu" class="collapse navbar-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="watch.php">View Tutorials</a></li>
+<li><a href="#">Submit Tutorials</a></li>
+</ul>
+</div>
+</nav>
+<!--Added to give 50px padding -->
+<div class="padd"></div>
+<div class="container">
+<div style="padding-top:3vmax;">
+<?php
+$dbc=mysqli_connect('localhost','id1847763_intern','DSAisa987','id1847763_test');
+ $qu=mysqli_query($dbc,"show tables")
+ or die("Boom Boom Boom dadadada");
+ $cnt=0;
+ while($row=mysqli_fetch_array($qu))
+ {
+ 	echo '<div class="row">';
+ 	echo '<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-1 lang">';
+ 	echo $row[0];
+ 	echo '</div>';
+ 	if($cnt==1)
+ 	{
+ 		echo '</div>';
+ 		echo'<div style="padding-top:3vmax;"></div>';
+ 		$cnt=0;
+ 	}
+ 	else
+ 	$cnt+=1;
+ }
+?>
+</body>
+</html>

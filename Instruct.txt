@@ -1,0 +1,7 @@
+Please Follow the following rules while giving input:
+
+1. No special characters shall be made for input except underscore(_)
+2. The maximum length of all inputs except url is 120 characters due to memory issues
+3. The maximum length of url is 200 characters
+4. Redundant URL are not allowed
+5. If you input any space in Topic name it will be converted to underscore
