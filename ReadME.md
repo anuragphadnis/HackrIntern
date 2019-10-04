@@ -1,7 +1,7 @@
-								Read me first
+								Read me First
 								-------------
 	
-			project Submitted by Anurag Phadnis
+			Project Submitted by Anurag Phadnis
 
 
 		This is a project made for Summer Internship at Hackr.io (2017). Submitted by Anurag Phadnis. This is a prototype website of actual hackr.io website. 		Its features are:
